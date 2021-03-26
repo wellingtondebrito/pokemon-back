@@ -62,4 +62,17 @@ export class PokemonController {
             res.status(error.statusCode || 400).send({ error: error.message })
         }
     }
+
+    async getAllTypes(req: Request, res: Response) {
+
+        try {
+
+            const result = await pokemonBusiness.getAllTypes()
+
+            res.status(201).send({ message: "All types", result })
+            
+        } catch (error) {
+            res.status(error.statusCode || 400).send({ error: error.message })
+        }
+    }
 }    

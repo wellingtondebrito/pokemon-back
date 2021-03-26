@@ -87,4 +87,17 @@ export class PokemonBusiness {
                 throw new CustomError(error.statusCode || 400, error.message)
         }
     }
+
+    async getAllTypes () {
+
+        try {
+            
+            const result = await this.pokemonDatabase.getAllTypes()
+
+            return  result 
+
+        } catch (error) {
+            throw new CustomError(error.statusCode || 400, error.message)
+        }
+    }
 }

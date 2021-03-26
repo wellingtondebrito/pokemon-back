@@ -83,4 +83,18 @@ export class PokemonDatabase extends BaseDatabase {
             throw new Error(error.sqlMessage || error.message)
         }
     }
+
+     async getAllTypes(): Promise<String[]> {
+        try {
+           
+            const result = await BaseDatabase.connection
+                .select("*")
+                .from(BaseDatabase.TYPE_TABLE)
+                
+                return result
+
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
 }
