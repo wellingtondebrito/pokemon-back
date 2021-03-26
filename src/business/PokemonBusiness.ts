@@ -13,9 +13,9 @@ export class PokemonBusiness {
     async createPokemon (input: createPokemonInput) {
         
         try {
-            const { name, image, atack, defense, stat, types } = input
+            const { name, image, atack, defense, stat, type1, type2 } = input
             
-            if(!name || !image || !atack || !defense || !stat || !types) {
+            if(!name || !image || !atack || !defense || !stat || !type1 || !type2) {
                 throw new CustomError(405, "Please fill in all fields")
             }
             
@@ -36,7 +36,8 @@ export class PokemonBusiness {
                 atack,
                 defense,
                 stat,
-                types
+                type1,
+                type2
             )
 
             await this.pokemonDatabase.createPokemon(pokeCreate)

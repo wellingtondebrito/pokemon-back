@@ -6,7 +6,8 @@ export class Pokemon {
         readonly atack: string,
         readonly defense: string,
         readonly stat: string,
-        readonly types: type[]
+        readonly type1: string,
+        readonly type2: string
     ) {}
 }
 
@@ -42,5 +43,6 @@ export interface createPokemonInput {
     atack: string,
     defense: string,
     stat: string,
-    types: type[]
+    type1: string,
+    type2: string
 }
